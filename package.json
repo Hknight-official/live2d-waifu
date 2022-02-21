@@ -1,0 +1,24 @@
+{
+  "name": "live2d-master",
+  "version": "1.0.0",
+  "description": "原项目出自一个大佬的博客，猫与向日葵。[阅读原文](https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02 \"阅读原文\")   本文对于原文和原作有删改。",
+  "main": "ai.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hknight-official/live2d-waifu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hknight-official/live2d-waifu/issues"
+  },
+  "homepage": "https://github.com/Hknight-official/live2d-waifu#readme",
+  "dependencies": {
+    "alexa-bot-api-v3": "^3.0.8",
+    "cors": "^2.8.5",
+    "express": "^4.17.3"
+  }
+}
