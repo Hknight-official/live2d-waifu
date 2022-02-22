@@ -6,6 +6,18 @@ var PORT = 3000;
 
 var path = require('path');
 app.use('/', express.static('public'));
+app.set('view engine', 'ejs');
+
+app.get('/', (req, res) => {
+    let waifu = req.query.waifu;
+    if (!waifu) {
+        waifu = 'rem';
+    }
+    console.log(waifu);
+    res.render('index', {
+        waifu: waifu
+    });
+})
 
 app.get('/ai', (req, res) => {
     // [] represents context, since it's an array
