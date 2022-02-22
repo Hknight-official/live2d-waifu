@@ -13,7 +13,6 @@ app.get('/', (req, res) => {
     if (!waifu) {
         waifu = 'rem';
     }
-    console.log(waifu);
     res.render('index', {
         waifu: waifu
     });

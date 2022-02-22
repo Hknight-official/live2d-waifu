@@ -3,8 +3,6 @@
     position: fixed;
     right: 50px;
     bottom: 0;
-    width: 480px;
-    height: 450px;
     
     z-index: 10000;
     font-size: 0;
@@ -14,6 +12,7 @@
 #live2d {
     position: relative;
 }
+
 
 .message {
     opacity: 0;
@@ -42,11 +41,14 @@
 }
 
 
-@media (max-width: 860px) {
+
+/* @media (max-width: 860px) {
     #landlord {
         display: none;
     }
-}
+
+    
+} */
 
 @keyframes shake {
     2% {
