@@ -123,14 +123,14 @@
         function display_weather(message, latitude, longitude) {
             endpoint = "https://api.forecast.io/forecast";
             key = "f2ebb1197dfe69302c0d8f605c804e0b";
-
+            console.log(endpoint + "/" + key + "/" + latitude + "," + longitude + "?callback=?")
             $.getJSON(endpoint + "/" + key + "/" + latitude + "," + longitude + "?callback=?", function (data) {
                 var skycons = new Skycons({ "color": "white" });
                 skycons.add("forecast_icon", data.currently.icon);
                 skycons.play();
 
                 // Current temperature
-                $("#temp").html("<span>" + data.currently.temperature + "&deg;F</span>")
+                $("#temp").html("<span>" + ((parseInt(data.currently.temperature)- 32)/1.8).toFixed(1) + "&deg;C</span>")
 
                 // Dynamic background color
                 class_thresholds = { "50": "cold", "60": "chilly", "70": "nice", "80": "warm", "90": "hot" };
