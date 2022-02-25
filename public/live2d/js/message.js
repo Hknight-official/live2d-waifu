@@ -105,6 +105,26 @@ function chatWaifu(msg){
     });
 }
 
+function chatWaifu2(msg){
+    
+    $.getJSON(`http://localhost:3000/voice?msg=${msg}`,function(result){
+        var audio = $("#waifu-voice");      
+        $("#waifu-src").attr("src", result.file);
+
+        audio[0].pause();
+        audio[0].load();
+        audio[0].oncanplaythrough = audio[0].play();
+
+        $('.message').html(msg).fadeTo(200, 1);
+
+        audio[0].addEventListener("ended", function(){
+            console.log("ended");
+            $('.message').stop().css('opacity',1);
+            $('.message').delay(100).fadeTo(200, 0);
+        });
+    });
+}
+
 function showMessage(text, timeout){
     if(Array.isArray(text)) text = text[Math.floor(Math.random() * text.length + 1)-1];
     //console.log('showMessage', text);
